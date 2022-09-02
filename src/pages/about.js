@@ -37,4 +37,4 @@ const createContent = () => {
     createFooter();
 }
 
-export default createContent
+export default createContent;
