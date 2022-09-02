@@ -1,12 +1,11 @@
-const createSpace = () => {
-   return document.createElement('div')
+import { makeDiv, } from "../components/tagMaker";
 
-}
-
-const createLink = (x, t) => {
+const createLink = (x, t, id) => {
     let link = document.createElement('a');
     link.setAttribute('href', x);
     link.textContent = t;
+    link.setAttribute('id', id);
+    link.classList.add('nav-item')
     return link;
 }
 
@@ -22,15 +21,15 @@ const createNav = () => {
     nv2.setAttribute('id', 'nv2');
     nv2.classList.add('nv');
 
-    let home = createLink('#', 'Home');
-    let contact = createLink('#', 'Contact');
+    let home = createLink('#', 'Home', 'home');
+    let contact = createLink('#', 'Contact', 'contact');
 
-    nv1.appendChild(home, createSpace(), contact);
+    nv1.appendChild(home, makeDiv(), contact);
 
-    let menu = createLink('#', 'Menu');
-    let about = createLink('#', 'About');
+    let menu = createLink('#', 'Menu', 'menu');
+    let about = createLink('#', 'About', 'about');
 
-    nv2.appendChild(menu, createSpace(), about);
+    nv2.appendChild(menu, makeDiv(), about);
 
     container.appendChild(nv1, nv2);
     

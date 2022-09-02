@@ -1,6 +1,6 @@
 const createFooter = () => {
     let container = document.createElement('footer');
-    container.setAttribute('id', footer);
+    container.setAttribute('id', 'footer');
     let text = document.createElement('a');
     text.setAttribute('href', 'https://github.com/tobiaoy');
     let icon = document.createElement('i');
