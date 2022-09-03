@@ -54,4 +54,6 @@ const createContent = () => {
     createFooter();
 }
 
+//something about window onload for the carousel
+
 export default createContent;
