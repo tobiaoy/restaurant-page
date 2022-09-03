@@ -1,13 +1,12 @@
+import { createIcon } from "./tagMaker";
+
 const createFooter = () => {
     let container = document.createElement('footer');
     container.setAttribute('id', 'footer');
-    let text = document.createElement('a');
-    text.setAttribute('href', 'https://github.com/tobiaoy');
-    let icon = document.createElement('i');
-    icon.classList.add('fa fa-github');
-    text.textContent = '  Tobi Oyero';
 
-    text.appendChild(icon);
+    let text = createIcon('https://github.com/tobiaoy', 'fa fa-github')
+    text.textContent = '  Tobi Oyero'
+
     container.appendChild(text);
 
     return container;
