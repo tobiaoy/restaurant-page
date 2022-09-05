@@ -3,6 +3,13 @@ import createHeader from "../components/header";
 import createNav from "../components/nav";
 import createFooter from "../components/footer";
 import { makeBreak, makeDiv, makePar, makeBtn } from "../components/tagMaker";
+import {content} from "../index";
+import sImage1 from "../../img/slider-image1.jpeg";
+import sImage2 from "../../img/slider-image2.jpeg";
+import sImage3 from "../../img/slider-image3.jpeg";
+import sImage4 from "../../img/slider-image4.jpeg";
+import sImage5 from "../../img/slider-image5.jpeg";
+import sImage6 from "../../img/slider-image6.jpeg";
 
 
 const createHomeTitle = () => {
@@ -17,9 +24,20 @@ const createHomeTitle = () => {
 const createHeroSlider = () => {
     let container = makeDiv('hero-slider');
     let images = [];
-    //add images
-    //set background image to currentSlide
     let currentSlide = 0;
+
+    //add images
+    images[0] = sImage1;
+    images[1] = sImage2;
+    images[2] = sImage3;
+    images[3] = sImage4;
+    images[4] = sImage5;
+    images[5] = sImage6;
+
+    //set background image to currentSlide
+    const setSlide = () => {
+        container.style.background = images[currentSlide];
+    }
     
     const changeSlide = () => {
         if (currentSlide < images.length - 1){
@@ -27,33 +45,30 @@ const createHeroSlider = () => {
         } else {
             currentSlide = 0;
         }
-        //background = images[currentSlide]
-    }
-    
-    setTimeout(changeSlide, 4000);
+        setSlide();
 
+        setTimeout('changeSlide()', 4000);
+    }
+
+    window.addEventListener('onload', changeSlide);
+    
     const homeOverlay = makeDiv('home-overlay');
 
     const overlayText = makePar('overlay-text');
     overlayText.textContent = `Get that chip off your shoulder ${makeBreak()}`
 
-    let overlayBtn = makeBtn('overlay-btn', 'Order Now!');
+    const overlayBtn = makeBtn('overlay-btn', 'Order Now!');
 
-    homeOverlay.appendChild(overlayText, overlayBtn);
-    container.appendChild(homeOverlay);
+    homeOverlay.append(overlayText, overlayBtn);
+    container.append(homeOverlay);
 
     return container;
-
 }
 
-const createContent = () => {
-    createHeader();
-    createNav();
-    createHomeTitle();
-    createHeroSlider();
-    createFooter();
+export const createContent = () => {
+  content.append(createHeader(),
+    createNav(),
+    createHomeTitle(),
+    createHeroSlider(),
+    createFooter())
 }
-
-//something about window onload for the carousel
-
-export default createContent;
