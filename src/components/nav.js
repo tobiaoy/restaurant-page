@@ -24,12 +24,12 @@ const createNav = () => {
     let home = createLink('#', 'Home', 'home');
     let contact = createLink('#', 'Contact', 'contact');
 
-    nv1.appendChild(home, makeDiv(), contact);
+    nv1.append(home, makeDiv(), contact);
 
     let menu = createLink('#', 'Menu', 'menu');
     let about = createLink('#', 'About', 'about');
 
-    nv2.appendChild(menu, makeDiv(), about);
+    nv2.append(menu, makeDiv(), about);
 
     container.appendChild(nv1, nv2);
     

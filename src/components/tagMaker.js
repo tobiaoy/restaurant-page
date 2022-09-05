@@ -28,6 +28,7 @@ const makeBtn = (id, t) => {
     return btn;
 }
 
+//may not work -_-
 const createIcon = (link, favicon) => {
     let text = document.createElement('a');
     text.setAttribute('href', link);
