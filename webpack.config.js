@@ -15,7 +15,7 @@ module.exports = {
     },
 
     module: {
-        rule: [
+        rules: [
             {
                 test: /\.scss$/i,
                 use: [
