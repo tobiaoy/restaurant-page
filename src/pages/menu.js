@@ -3,6 +3,8 @@ import createHeader from "../components/header";
 import createNav from "../components/nav";
 import createFooter from "../components/footer";
 import { makeBreak, makeDiv} from "../components/tagMaker";
+import {content} from "../index";
+
 
 const makePar = (cl, id) => {
     let par = document.createElement('p');
@@ -23,7 +25,7 @@ const makeMenuItem = (id, title, underText, price) => {
 
     item.classList.add('menu-item');
 
-    item.appendChild(title, underText, price);
+    item.append(title, underText, price);
     return item;
 }
 
@@ -39,7 +41,7 @@ const createMenu = () => {
     let seafoodFries = makeMenuItem('seafood-fries', 'Seafood Fries', 'Fish & Chips in tartar sauce', '$15.00');
     let bbqFries = makeMenuItem('bbq-fries', 'BBQ Fries', 'Peppered fries made in our specialty bbq sauce', '$12.50');
 
-    straightFr.appendChild(chipotleFries, makeBreak(), garlicFries, makeBreak(), nachoFries, makeBreak(), seafoodFries, makeBreak(), bbqFries);
+    straightFr.append(chipotleFries, makeBreak(), garlicFries, makeBreak(), nachoFries, makeBreak(), seafoodFries, makeBreak(), bbqFries);
 
     //create container for poutine
     let poutines = makeDiv('poutines-block');
@@ -50,7 +52,7 @@ const createMenu = () => {
     let beefPo = makeMenuItem('beef-poutine', 'Beef Poutine', 'The classic with a shredded, peppered beef glaze', '$14.50');
     let spicyPo = makeMenuItem('spicy-poutine', 'Spicy Poutine', 'Fries in a spicy cheese sauce and a side of gravy', '12.00');
 
-    poutines.appendChild(classicPo, makeBreak(), baconPo, makeBreak(), chickenPo, makeBreak(), beefPo, makeBreak(), spicyPo);
+    poutines.append(classicPo, makeBreak(), baconPo, makeBreak(), chickenPo, makeBreak(), beefPo, makeBreak(), spicyPo);
 
 
     //create container for big fries
@@ -59,7 +61,7 @@ const createMenu = () => {
     let classicBu = makeMenuItem('classic-bucket', 'Classic Bucket',  '16oz of our best salted shoestrings', '$12.00');
     let chickenFr = makeMenuItem('chicken-fries', 'Chicken Fries', '16oz bucket of fry-shaped chicken', '$30.00');
     
-    bigFr.appendChild(classicBu, makeBreak(), chickenFr);
+    bigFr.append(classicBu, makeBreak(), chickenFr);
 
     //create container for alt cuts
     let altCuts = makeDiv('alt-cuts');
@@ -70,19 +72,16 @@ const createMenu = () => {
     let roastCl = makeMenuItem('roast-potato', 'Roasted Classic', 'Three well-spiced roast potatoes', '$18.00');
     let stuffedRs = makeMenuItem('stuffed-potato', 'Stuffed Roast', 'A stuffed roasted potato with fillings of choice', '$15');
 
-    altCuts.appendChild(waffleFr, makeBreak(), hashBr, makeBreak(),  miniMash, makeBreak(), roastCl, makeBreak(), stuffedRs);
+    altCuts.append(waffleFr, makeBreak(), hashBr, makeBreak(),  miniMash, makeBreak(), roastCl, makeBreak(), stuffedRs);
 
-    container.appendChild(straightFr, makeDiv(''),  poutines, makeDiv(''),  bigFr, makeDiv(''), altCuts);
+    container.append(straightFr, makeDiv(''),  poutines, makeDiv(''),  bigFr, makeDiv(''), altCuts);
     return container; 
 
-
 }
 
-const createContent = () => {
-    createHeader();
-    createNav();
-    createMenu();
-    createFooter();
+export const createContent = () => {
+  content.append(createHeader(),
+  createNav(),
+  createMenu(),
+  createFooter())
 }
-
-export default createContent;
