@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;500;600&family=Overpass:ital,wght@0,100;0,200;0,300;1,100&display=swap');
+@import "variables";
+
+/*
+    to use the fonts:
+    font-family: 'Dosis', sans-serif;
+    - dosis is for the header, it's the thicker font
+    font-family: 'Overpass', sans-serif;
+    -overpass is for copy and tab headings
+*/
+
+
+
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+#content{
+    width: 100vw;
+    height: 100vh;
+}
+
+/* header */
+#header{
+    font-family: 'Dosis', 'Segoe UI', sans-serif;
+    @include centeredBox('row');
+    gap: 1em;
+    
+    #header-image{
+        
+    }
+}
+
+/* nav */
+
+
+/* footer */

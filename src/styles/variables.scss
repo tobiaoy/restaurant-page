@@ -1,0 +1,14 @@
+$bright-orange: #FC6238;
+$yellow: #FFD872;
+$peach: #FFDACC;
+$dark-orange: #E77577;
+$blue: #6C88C4;
+
+//mixins
+@mixin centeredBox ($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
