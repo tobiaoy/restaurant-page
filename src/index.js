@@ -4,7 +4,7 @@ import {createContent as renderHome} from "./pages/home";
 import {createContent as renderMenu} from "./pages/menu";
 import {createContent as renderContact} from "./pages/contact";
 
-const content = document.querySelector('#content');
+export const content = document.querySelector('#content');
 let currentPage = 'home';
 
 const clearPage = () => {
@@ -23,7 +23,7 @@ homeBtn.addEventListener('click', () => {
         return;
     } else {
         clearPage();
-        content.appendChild(renderHome());
+        renderHome();
     }
 
     currentPage = 'home';
@@ -34,7 +34,7 @@ aboutBtn.addEventListener('click', () => {
         return;
     } else {
         clearPage();
-        content.appendChild(renderAbout());
+        renderAbout();
     }
 
     currentPage = 'about';
@@ -45,7 +45,7 @@ contactBtn.addEventListener('click', () => {
         return;
     } else {
         clearPage();
-        content.appendChild(renderContact());
+        renderContact();
     }
 
     currentPage = 'contact';
@@ -56,9 +56,10 @@ menuBtn.addEventListener('click', () => {
         return;
     } else {
         clearPage();
-        content.appendChild(renderMenu());
+        renderMenu();
     }
 
     currentPage = 'menu';
 })
+
 
