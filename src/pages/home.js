@@ -55,7 +55,7 @@ const createHeroSlider = () => {
     const homeOverlay = makeDiv('home-overlay');
 
     const overlayText = makePar('overlay-text');
-    overlayText.textContent = `Get that chip off your shoulder ${makeBreak()}`
+    overlayText.textContent = `Get that chip off your shoulder`
 
     const overlayBtn = makeBtn('overlay-btn', 'Order Now!');
 
