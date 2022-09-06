@@ -1,4 +1,5 @@
 import fritesLogo from "../../img/frites-logo.png"
+import '../styles/component.scss'
 
 const createHeader = () => {
     let container = document.createElement('header');

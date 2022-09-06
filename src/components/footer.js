@@ -1,4 +1,5 @@
 import githubLogo from "../../img/github-logo.svg"
+import '../styles/component.scss'
 
 const createFooter = () => {
     let container = document.createElement('footer');
@@ -13,7 +14,7 @@ const createFooter = () => {
     
     const content = document.createElement("a");
     content.setAttribute("href", "https://github.com/tobiaoy");
-    content.append(githubIcon, caption);
+    content.append(githubIcon, text);
         
 
     container.appendChild(content);

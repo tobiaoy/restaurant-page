@@ -28,18 +28,12 @@ const makeBtn = (id, t) => {
     return btn;
 }
 
-//may not work -_-
-const createIcon = (link, favicon) => {
-    let text = document.createElement('a');
-    text.setAttribute('href', link);
-    let icon = document.createElement('i');
-    icon.classList.add(favicon);
-
-    text.appendChild(icon);
-    return text;
+const createImg = (src, alt) => {
+    let img  = document.createElement('img');
+    img.src = src;
+    img.alt = alt;
+    return img;
 }
 
 
-
-
-export {makeDiv, makeBreak, makePar, makeInput, makeBtn, createIcon};
+export {makeDiv, makeBreak, makePar, makeInput, makeBtn, createImg};
