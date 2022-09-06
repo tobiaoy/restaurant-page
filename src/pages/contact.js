@@ -2,8 +2,9 @@
 import createHeader from "../components/header";
 import createNav from "../components/nav";
 import createFooter from "../components/footer";
-import { makeBreak, makeDiv, makePar, makeInput, createIcon } from "../components/tagMaker";
+import { makeBreak, makeDiv, makePar, makeInput, createImg, makeBtn } from "../components/tagMaker";
 import { content } from "../index";
+
 import clockImg from "../../img/clock.svg"
 import locImg from "../../img/gps.svg"
 import phoneImg from "../../img/phone.svg"
@@ -12,12 +13,6 @@ import instaImg from "../../img/instagram-logo.svg"
 import fbImg from "../../img/facebook-logo.svg"
 
 
-const createMaterialIcon = (mat, cls) => {
-    let con = document.createElement('span');
-    con.classList.add(cls);
-    con.innerHTML = mat;
-    return con;
-}
 
 const createContactTitle = () => {
     let container = makeDiv('contact-title');
@@ -36,20 +31,20 @@ const createContactLeft = () => {
     let container = makeDiv('contact-left');
     
     let hours = makeDiv('hours-service');
-    let hoursIcon = createMaterialIcon('schedule', 'material-symbols-outlined')
+    let hoursIcon = createImg(clockImg, "clock img");
     let hoursText = makePar('hours-text');
-    hoursText.textContent = `Monday - Friday: 10AM - 8PM ${makeBreak()} Saturday - Sunday: 10AM - 6PM`
+    hoursText.textContent = `Monday - Friday: 10AM - 8PM \n Saturday - Sunday: 10AM - 6PM`
 
     hours.append(hoursIcon, hoursText);
 
     let location = makeDiv('contact-location');
-    let locationIcon = createMaterialIcon('explore', 'material-symbols-outlined');
+    let locationIcon = createImg(locImg, 'location img');
     let locationText = makePar('location-text');
-    locationText.textContent = `1514 Edwards Street ${makeBreak()} Greenville ${makeBreak()} NC 27834`;
+    locationText.textContent = `1514 Edwards Street \n Greenville \n NC 27834`;
 
     location.append(locationIcon, locationText);
 
-    let phoneIcon = createMaterialIcon('call', 'material-symbols-outlined');
+    let phoneIcon = createImg(phoneImg, 'phone img');
     let phone = makeDiv('contact-phone');
     let phoneText = makePar('phone-text');
     phoneText.textContent = `+1 (545) 732 0553`;
@@ -72,8 +67,8 @@ const createContactRight = () => {
     let message = makeInput('text-area', 'contact-message');
     message.setAttribute('placeholder', 'Write your message here...');
 
-    let submit = makeInput('submit', 'submit-btn');
-    submit.textContent('Submit');
+    let submit = makeBtn('submit', 'submit-btn');
+    //submit.textContent('Submit');
 
     container.append(name, email, message, submit);
     return container;
@@ -88,21 +83,21 @@ const createSocials = () => {
     let twitterCon = makeDiv('twitter-container');
     let twitTitle = makePar()
     twitTitle.textContent = 'Twitter'
-    let twitIcon = createIcon('https://twitter.com', 'fa fa-twitter')
+    let twitIcon = createImg(twitterImg, 'twitter logo');
     twitterCon.append(twitTitle, twitIcon);
     
 
     let instaCon = makeDiv('insta-container');
     let inTitle = makePar();
     inTitle.textContent = 'Instagram';
-    let insIcon = createIcon('https://instagram.com', 'fa fa-instagram');
+    let insIcon = createImg(instaImg, 'instagram icon');
     instaCon.append(inTitle, insIcon)
 
 
     let fbCon = makeDiv('fb-container');
     let fbTitle = makePar();
     fbTitle.textContent = 'Facebook';
-    let fbIcon = createIcon('https://facebook.com', 'fa fa-facebook-official');
+    let fbIcon = createImg(fbImg, 'facebook logo');
     fbCon.append(fbTitle, fbIcon);
 
     const iconContainer = makeDiv('icon-container');
