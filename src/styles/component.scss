@@ -18,25 +18,47 @@
     padding: 0px;
 }
 
+body{
+    grid-template-areas: 
+    'header',
+    'nav',
+    'content',
+    'footer'
+    ;
+}
 
 
 #content{
+    grid-area: 'content';
     width: 100vw;
     height: 100vh;
 }
 
 /* header */
 #header{
+    grid-area: 'header';
     font-family: 'Dosis', 'Segoe UI', sans-serif;
     @include centeredBox('row');
     gap: 1em;
+    margin-top: 1em;
     
     #header-image{
-        
+        height: 40px;
+        width: 40px;
+    }
+
+    #header-title{
+        font-style: oblique;
+        color: $dark-orange;
     }
 }
 
 /* nav */
-
+#nav{
+    grid-area: 'nav';
+}
 
 /* footer */
+#footer{
+    grid-area: footer;
+}
