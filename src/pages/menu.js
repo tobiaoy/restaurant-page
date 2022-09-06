@@ -6,6 +6,7 @@ import { makeBreak, makeDiv} from "../components/tagMaker";
 import {content} from "../index";
 
 
+
 const makePar = (cl, id) => {
     let par = document.createElement('p');
     par.classList.add(cl);
@@ -15,17 +16,17 @@ const makePar = (cl, id) => {
 
 const makeMenuItem = (id, title, underText, price) => {
     let item = makeDiv(id);
-    this.title = makePar('menu-title', '');
-    this.underText = makePar('menu-undertext', '')
-    this.price = makePar('menu-price', '');
+    let ttl = makePar('menu-title', '');
+    let uText = makePar('menu-undertext', '')
+    let prc = makePar('menu-price', '');
 
-    title.textContent = title;
-    underText.textContent = underText;
-    price.textContent = price;
+    ttl.textContent = title;
+    uText.textContent = underText;
+    prc.textContent = price;
 
     item.classList.add('menu-item');
 
-    item.append(title, underText, price);
+    item.append(ttl, uText, prc);
     return item;
 }
 
