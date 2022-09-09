@@ -16,7 +16,7 @@ const makePar = (id) => {
 
 const makeInput = (type, id) => {
     let input = document.createElement('input');
-    input.setAttribute('type', type);
+    input.type = type;
     input.setAttribute('id', id);
     return input;
 }
