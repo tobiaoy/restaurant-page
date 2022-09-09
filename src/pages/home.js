@@ -36,7 +36,7 @@ const changeSlide = (con) => {
 const createHomeTitle = () => {
     let container = makeDiv('home-title');
     let homeTitle = makePar('');
-    homeTitle.textContent = 'Home of the Potato';
+    homeTitle.textContent = 'HOME OF THE POTATO';
 
     container.appendChild(homeTitle);
     return container;
@@ -44,11 +44,11 @@ const createHomeTitle = () => {
 
 const createHeroSlider = () => {
     let container = makeDiv('hero-slider');
-    setInterval(() => {changeSlide(container)}, 3000);
+    setInterval(() => {changeSlide(container)}, 5000);
    
     const homeOverlay = makeDiv('home-overlay');
     const overlayText = makePar('overlay-text');
-    overlayText.textContent = `Get that chip off your shoulder`
+    overlayText.textContent = `GET THAT CHIP OFF YOUR SHOULDER`
     const overlayBtn = makeBtn('overlay-btn', 'Order Now!');
 
     homeOverlay.append(overlayText, overlayBtn);
