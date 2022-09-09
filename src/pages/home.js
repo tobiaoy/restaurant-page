@@ -2,14 +2,35 @@
 import createHeader from "../components/header";
 import createNav from "../components/nav";
 import createFooter from "../components/footer";
-import { makeBreak, makeDiv, makePar, makeBtn } from "../components/tagMaker";
+import { makeDiv, makePar, makeBtn } from "../components/tagMaker";
 import {content} from "../index";
-import sImage1 from "../../img/slider-image1.jpeg";
-import sImage2 from "../../img/slider-image2.jpeg";
-import sImage3 from "../../img/slider-image3.jpeg";
-import sImage4 from "../../img/slider-image4.jpeg";
-import sImage5 from "../../img/slider-image5.jpeg";
-import sImage6 from "../../img/slider-image6.jpeg";
+import "../styles/page.scss"
+
+import sImg1 from "../../img/slider-img1.jpeg";
+import sImg2 from "../../img/slider-img2.jpeg";
+import sImg3 from "../../img/slider-img3.jpeg";
+import sImg4 from "../../img/slider-img4.jpeg";
+
+let images = [];
+let i = 0;
+
+//add images
+images[0] = sImg1;
+images[1] = sImg2;
+images[2] = sImg3;
+images[3] = sImg4;
+
+
+const changeSlide = (con) => {
+    con.style.backgroundImage = `url(${images[i]})`;
+    
+    if (i < images.length - 1){
+        i++;
+    } else {
+        i = 0;
+    }
+    
+}
 
 
 const createHomeTitle = () => {
@@ -23,40 +44,11 @@ const createHomeTitle = () => {
 
 const createHeroSlider = () => {
     let container = makeDiv('hero-slider');
-    let images = [];
-    let currentSlide = 0;
-
-    //add images
-    images[0] = sImage1;
-    images[1] = sImage2;
-    images[2] = sImage3;
-    images[3] = sImage4;
-    images[4] = sImage5;
-    images[5] = sImage6;
-
-    //set background image to currentSlide
-    const setSlide = () => {
-        container.style.background = images[currentSlide];
-    }
-    
-    const changeSlide = () => {
-        if (currentSlide < images.length - 1){
-            currentSlide +=1;
-        } else {
-            currentSlide = 0;
-        }
-        setSlide();
-
-        setTimeout('changeSlide()', 4000);
-    }
-
-    window.addEventListener('onload', changeSlide);
-    
+    setInterval(() => {changeSlide(container)}, 3000);
+   
     const homeOverlay = makeDiv('home-overlay');
-
     const overlayText = makePar('overlay-text');
     overlayText.textContent = `Get that chip off your shoulder`
-
     const overlayBtn = makeBtn('overlay-btn', 'Order Now!');
 
     homeOverlay.append(overlayText, overlayBtn);
@@ -66,9 +58,11 @@ const createHeroSlider = () => {
 }
 
 export const createContent = () => {
-  content.append(createHeader(),
-    createNav(),
+
+  document.body.append(createHeader(),
+  createNav(),createFooter());
+
+  content.append(
     createHomeTitle(),
-    createHeroSlider(),
-    createFooter())
+    createHeroSlider());
 }
