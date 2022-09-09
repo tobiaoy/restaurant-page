@@ -3,20 +3,18 @@ import createHeader from "../components/header";
 import createNav from "../components/nav";
 import createFooter from "../components/footer";
 import { content } from "../index";
+import { makeDiv, makePar } from "../components/tagMaker";
 
 
 const createAbout = () => {
-    let container = document.createElement('div');
+    let container = makeDiv('about-container');
 
-    let title = document.createElement('h3');
-    title.textContent = 'About Us';
-    title.setAttribute('id', 'about-title');
-    title.classList.add('page-title');
+    let title = makePar('about-title');
+    title.textContent = 'ABOUT US';
 
-    let aboutBlock = document.createElement('div');
-    aboutBlock.setAttribute('id', 'about-block');
-    let sec1  = document.createElement('div');
-    let sec2 = document.createElement('div');
+    let aboutBlock = makeDiv('about-block');
+    let sec1  = makeDiv('sec1');
+    let sec2 = makeDiv('sec2');
 
     let aboutTxt = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut luctus neque, consequat pharetra lorem. In hac habitasse platea dictumst. Mauris egestas tortor lectus, sodales porttitor erat pharetra vitae. Pellentesque massa risus, sagittis non malesuada nec, vehicula vitae libero. Nam vitae congue libero. Fusce mauris lacus, dictum sed dictum ac, aliquet in mi. Nullam imperdiet, dolor in fermentum vulputate, ante mi faucibus est, vitae tristique diam odio eu est. Fusce quam est, pulvinar vel quam nec, dignissim efficitur ex. Proin ac felis dolor. Morbi aliquet eget nunc ut consectetur. Nam elementum imperdiet lectus volutpat scelerisque. Mauris et risus vulputate, maximus ex sit amet, ornare justo. Etiam odio neque, ullamcorper eleifend mi ac, maximus ornare sapien';
 
@@ -32,8 +30,10 @@ const createAbout = () => {
 }
 
 export const createContent = () => {
-    content.append(createHeader(),
-    createNav(),
-    createAbout(),
-    createFooter())
+    document.body.append(createHeader(),
+    createNav(), createFooter());
+    
+    content.append(
+    createAbout()
+    )
 }
