@@ -1,0 +1,265 @@
+@import "variables";
+
+@mixin contactDetail{
+    @include centeredBox(row);
+    gap: 1rem;
+    
+    img{
+        height: 2rem;
+        width: 2rem;
+    }
+}
+
+@mixin copyFont($size){
+    font-family: 'Overpass', 'Segoe UI', sans-serif;
+    font-size: $size;
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-areas: 
+    'header'
+    'nav'
+    'content'
+    'footer'
+    ;
+}
+
+#header{
+    grid-area: header;
+}
+
+#nav{
+    grid-area: nav;
+}
+
+#footer{
+    grid-area: footer;
+}
+
+#content{
+    //@include centeredBox(column)
+    grid-area: content;
+}
+
+#hero-slider{
+    width: 100%;
+    height: 80vh;
+    //background-image: url('../../img/slider-image4.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    @include centeredBox('row');
+
+    div{
+        @include centeredBox('column');
+        flex-direction: column;
+        gap: 1rem;
+        background-color: rgba(0, 0, 0, 0.4);
+        width: 100%;
+        height: 100%;
+    }
+}
+
+//contact.js
+#contact-main{
+    display: grid;
+    grid-template-areas: 
+    'contact-title contact-title'
+    'contact-left contact-right'
+    ;
+    gap: 1.5rem;
+}
+
+#contact-title{
+    grid-area: contact-title;
+    @include centeredBox(column);
+    gap: 1rem;
+
+    #contact-call{
+        font-family: 'Dosis', 'Segoe UI', sans-serif;
+        font-style: italic;
+        font-size: 1rem;;
+    }
+
+    #cTitle-main{
+        @include copyFont(2rem);
+        font-weight: lighter;
+    }
+}
+
+#contact-left{
+    grid-area: contact-left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1.25rem 2rem;
+    padding: 2.5rem;
+    @include copyFont(1.15rem);
+
+    #hours-service{
+        @include contactDetail();
+    }
+
+    #contact-location{
+        @include contactDetail();
+    }
+
+    #contact-phone{
+        @include contactDetail()
+    }
+}
+
+#contact-form{
+    grid-area: contact-right;
+
+    @include centeredBox(column);
+    gap: 1.5rem;
+    margin: 1.25rem 2rem;
+
+    input{
+        padding: 1rem;
+        width: 20rem;
+        @include copyFont(1rem);
+    }
+
+    button{
+        padding: 1rem;
+        width: 20rem;
+        @include copyFont(1rem);
+    }
+
+    #contact-message{
+        height: 10rem;
+        width: 20rem;
+        @include copyFont(1rem);
+        padding: 0.75rem;
+    }
+}
+
+#socials-box{
+    @include centeredBox(column);
+    gap: 1rem;
+
+    #socials-title{
+        font-family: 'Dosis', 'Segoe UI', sans-serif;
+        font-style: italic;
+        font-size: 1rem;;
+        }
+
+    #icon-container{
+        @include centeredBox(row);
+        gap: 5.5rem;
+
+        a{
+
+            img{
+                height: 2.5rem;
+                width: 2.5rem;
+            }
+
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+#contact-map{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    @include centeredBox(row);
+    background-image: url("../../img/greenville-map.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 8rem;
+
+    #map-text{
+        padding: 1rem 1.25rem;
+        color: rgba(0, 160, 0);
+        border-radius: 2rem;
+        background-color: rgba(255, 255, 255, 0.5);
+        @include copyFont(0.95rem);
+        border-color: rgba(255, 255, 255, 0.5);
+        border-width: thin;
+
+        &:hover{
+            cursor: pointer;
+            font-weight: bold;
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+    }
+}
+
+//menu.js
+#menu-container{
+    @include centeredBox(column);
+    gap: 2rem;
+    margin: 2rem;
+
+    #menu-title{
+        @include copyFont(2rem);
+        font-weight: lighter;
+    }
+
+    .sub-title{
+        @include copyFont(1.15rem);
+    }
+
+    div{
+        @include centeredBox(column);
+        gap: 0.75rem;
+
+        .menu-item{
+            @include centeredBox(column);
+            gap: 0.5rem;
+            @include copyFont(0.95rem);
+
+            .menu-title{
+                @include copyFont(1rem);
+                font-style: oblique;
+                font-weight: bolder;
+            }
+        }
+    }
+}
+
+//about
+#about-container{
+    @include centeredBox(column);
+    padding: 3rem 20rem;
+    gap: 3rem;
+
+    #about-title{
+        @include copyFont(2rem);
+        font-weight: lighter;
+    }
+
+    #about-block{
+        @include centeredBox(column);
+        gap: 4rem;
+
+        div{
+            @include copyFont(1.25rem)
+            
+        }
+
+    }
+}
