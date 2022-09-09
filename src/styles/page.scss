@@ -7,6 +7,7 @@
     img{
         height: 2rem;
         width: 2rem;
+        filter: invert(93%) sepia(8%) saturate(1747%) hue-rotate(306deg) brightness(97%) contrast(113%);
     }
 }
 
@@ -37,6 +38,7 @@ body{
     'content'
     'footer'
     ;
+    background-color: $peach;
 }
 
 #header{
@@ -56,6 +58,19 @@ body{
     grid-area: content;
 }
 
+#home-title{
+    @include copyFont(2rem);
+    @include centeredBox(row);
+    margin: 1rem;
+    padding: 0.5em;
+    font-weight: bolder;
+    font-style: italic;
+    color: $yellow;
+    box-shadow: rgba(0, 0, 0, 0.6);
+    background-color: $blue;
+    border-radius: 0.75em;
+}
+
 #hero-slider{
     width: 100%;
     height: 80vh;
@@ -73,7 +88,37 @@ body{
         width: 100%;
         height: 100%;
     }
+
+    animation: fadeIn 5s infinite ease-in-out;
 }
+
+#home-overlay{
+
+    #overlay-text{
+        @include copyFont(2.15rem);
+        font-style: italic;
+        color: $dark-orange;
+        font-weight: bolder;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 0.25rem;
+        border-radius: 0.5rem;
+    }
+
+    #overlay-btn{
+        padding: 0.75rem 2.15rem;
+        border-radius: 1em;
+        @include copyFont(1rem);
+        background-color: $yellow;
+        border-style: none;
+        color: $dark-orange;
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+}
+
 
 //contact.js
 #contact-main{
@@ -87,8 +132,17 @@ body{
 
 #contact-title{
     grid-area: contact-title;
+    @include copyFont(2rem);
     @include centeredBox(column);
-    gap: 1rem;
+    margin: 0.5rem;
+    padding: 0.5em;
+    font-weight: bolder;
+    font-style: italic;
+    color: $yellow;
+    box-shadow: rgba(0, 0, 0, 0.6);
+    background-color: $blue;
+    border-radius: 0.75em;
+    gap: 0.75rem;
 
     #contact-call{
         font-family: 'Dosis', 'Segoe UI', sans-serif;
@@ -108,10 +162,13 @@ body{
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 2.5rem;
     margin: 1.25rem 2rem;
     padding: 2.5rem;
     @include copyFont(1.15rem);
+    background-color: $dark-orange;
+    border-radius: 1em;
+    color: $peach;
 
     #hours-service{
         @include contactDetail();
@@ -136,13 +193,45 @@ body{
     input{
         padding: 1rem;
         width: 20rem;
-        @include copyFont(1rem);
+        @include copyFont(0.95rem);
+        border-radius: 0.5rem;
+        border-style: none;
+        color: $blue;
+
+        &:focus{
+            outline: 2px solid $dark-orange;
+        }
+    }
+
+    textarea{
+        padding: 1rem;
+        width: 20rem;
+        @include copyFont(0.95rem);
+        border-radius: 0.5rem;
+        border-style: none;
+        color: $blue;
+
+        &:focus{
+            outline: 2px solid $dark-orange;
+        }
+    
     }
 
     button{
         padding: 1rem;
         width: 20rem;
         @include copyFont(1rem);
+        border-radius: 0.5rem;
+        border-style: none;
+        background-color: $dark-orange;
+        color: $peach;
+        opacity: 0.3;
+
+        &:hover{
+            cursor: pointer;
+            opacity: 0.9;
+
+        }
     }
 
     #contact-message{
@@ -156,11 +245,15 @@ body{
 #socials-box{
     @include centeredBox(column);
     gap: 1rem;
+    margin-top: 0.25rem;
+    background-color: $blue;
+    padding: 1rem;
 
     #socials-title{
         font-family: 'Dosis', 'Segoe UI', sans-serif;
         font-style: italic;
-        font-size: 1rem;;
+        font-size: 1.15rem;
+        color: $yellow;
         }
 
     #icon-container{
@@ -193,17 +286,20 @@ body{
 
     #map-text{
         padding: 1rem 1.25rem;
-        color: rgba(0, 160, 0);
-        border-radius: 2rem;
-        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 1.25rem;
+        background-color: $dark-orange;
+        opacity: 0.6;
         @include copyFont(0.95rem);
-        border-color: rgba(255, 255, 255, 0.5);
+        border-style: none;
         border-width: thin;
+        color: $blue;
+        font-weight: bold;
 
         &:hover{
             cursor: pointer;
-            font-weight: bold;
-            background-color: rgba(255, 255, 255, 0.6);
+            font-weight: bolder;
+            background-color: $dark-orange; 
+            opacity: 0.9;
         }
     }
 }
@@ -213,6 +309,10 @@ body{
     @include centeredBox(column);
     gap: 2rem;
     margin: 2rem;
+    background-color: $dark-orange;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    color: $yellow;
 
     #menu-title{
         @include copyFont(2rem);
@@ -226,6 +326,9 @@ body{
     div{
         @include centeredBox(column);
         gap: 0.75rem;
+        background-color: $blue;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
 
         .menu-item{
             @include centeredBox(column);
@@ -244,8 +347,11 @@ body{
 //about
 #about-container{
     @include centeredBox(column);
-    padding: 3rem 20rem;
+    padding: 5rem 8rem;
     gap: 3rem;
+    background-color: $blue;
+    color: $peach;
+
 
     #about-title{
         @include copyFont(2rem);
@@ -261,5 +367,23 @@ body{
             
         }
 
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    
+    15% {
+        opacity: 0.8;
+    }
+
+    90% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0;
     }
 }
