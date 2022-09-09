@@ -10,35 +10,18 @@
 */
 
 
-
-
 *, *::before, *::after{
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
 }
 
-body{
-    grid-template-areas: 
-    'header',
-    'nav',
-    'content',
-    'footer'
-    ;
-}
-
-
-#content{
-    grid-area: 'content';
-    width: 100vw;
-    height: 100vh;
-}
 
 /* header */
 #header{
-    grid-area: 'header';
+    
     font-family: 'Dosis', 'Segoe UI', sans-serif;
-    @include centeredBox('row');
+    @include centeredBox(row);
     gap: 1em;
     margin-top: 1em;
     
@@ -55,10 +38,39 @@ body{
 
 /* nav */
 #nav{
-    grid-area: 'nav';
+    
+    @include centeredBox(row);
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    justify-content: space-around;
+
+    .nv{
+        @include centeredBox('row');
+        gap: 2em;
+
+        button{
+            padding: 0.75rem 2rem;
+            font-family: 'Overpass', 'Segoe UI', sans-serif;
+        }
+    }
+
 }
 
 /* footer */
 #footer{
-    grid-area: footer;
+    @include centeredBox(row);
+    font-family: 'Dosis', 'Segoe UI', sans-serif;
+    padding: 1rem 1rem;
+
+
+    a{
+        @include centeredBox(row);
+        gap: 1rem;
+        text-decoration: none;
+
+        img{
+            width: 30px;
+            height: 30px;
+        }
+    }
 }
