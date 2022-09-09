@@ -69,12 +69,15 @@ const createContactRight = () => {
     container.setAttribute('id', 'contact-form');
 
     let name = makeInput('text', 'contact-name');
+    name.setAttribute('required', '')
     name.placeholder = 'Name: ';
 
     let email = makeInput('email', 'contact-email');
+    email.setAttribute('required', '');
     email.placeholder = 'Email: ';
 
     let message = document.createElement('textarea');
+    message.setAttribute('required', '')
     message.setAttribute('id', 'contact-message');
     message.placeholder = 'You can write your message here...';
 
