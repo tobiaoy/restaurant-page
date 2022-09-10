@@ -5,6 +5,8 @@ import createFooter from "../components/footer";
 import { makeDiv, makePar, makeBtn } from "../components/tagMaker";
 import {content} from "../index";
 import "../styles/page.scss"
+import { createContent as renderMenu } from "./menu";
+import { clearPage, setCurrentPage } from "../index";
 
 import sImg1 from "../../img/slider-img1.jpeg";
 import sImg2 from "../../img/slider-img2.jpeg";
@@ -50,6 +52,12 @@ const createHeroSlider = () => {
     const overlayText = makePar('overlay-text');
     overlayText.textContent = `GET THAT CHIP OFF YOUR SHOULDER`
     const overlayBtn = makeBtn('overlay-btn', 'Order Now!');
+
+    overlayBtn.addEventListener('click', () => {
+        clearPage();
+        renderMenu();
+        setCurrentPage('menu');
+    });
 
     homeOverlay.append(overlayText, overlayBtn);
     container.append(homeOverlay);
