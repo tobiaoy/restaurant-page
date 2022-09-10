@@ -97,7 +97,7 @@ body{
     #overlay-text{
         @include copyFont(2.15rem);
         font-style: italic;
-        color: $dark-orange;
+        color: $bright-orange;
         font-weight: bolder;
         background-color: rgba(0, 0, 0, 0.7);
         padding: 0.25rem;
@@ -110,7 +110,7 @@ body{
         @include copyFont(1rem);
         background-color: $yellow;
         border-style: none;
-        color: $dark-orange;
+        color: $bright-orange;
 
         &:hover{
             cursor: pointer;
@@ -247,6 +247,7 @@ body{
     gap: 1rem;
     margin-top: 0.25rem;
     background-color: $blue;
+    opacity: 0.8;
     padding: 1rem;
 
     #socials-title{
@@ -287,8 +288,8 @@ body{
     #map-text{
         padding: 1rem 1.25rem;
         border-radius: 1.25rem;
-        background-color: $dark-orange;
-        opacity: 0.6;
+        background-color: $yellow;
+        opacity: 0.8;
         @include copyFont(0.95rem);
         border-style: none;
         border-width: thin;
@@ -298,7 +299,7 @@ body{
         &:hover{
             cursor: pointer;
             font-weight: bolder;
-            background-color: $dark-orange; 
+            background-color: $bright-orange; 
             opacity: 0.9;
         }
     }
