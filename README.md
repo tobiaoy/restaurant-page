@@ -4,6 +4,7 @@
 - The tabs would be focused on commonly seen nav items such as menu and contact
 - This project was completed as part of the odin project js curriculum
 - It was made with JS, SASS, HTML, Webpack and NPM
+- [Live Preview](tobiaoy.github.io/restaurant-page)
 ---
 ## Retrospective
 - This project was the first time I've used webpack and I initially struggled with its configuration
